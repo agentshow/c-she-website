@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C社定位 - C社</title>
+    <style id="theme-vars">
+:root {
+  --c-primary: #f03c1e;
+  --c-primary-light: #f4633d;
+  --c-primary-dark: #c9301a;
+  --c-gold: #ffd200;
+  --c-gold-light: #ffe14d;
+  --c-gold-dark: #d4ad00;
+  --c-background: #faf8f5;
+  --c-surface: #ffffff;
+  --c-surface-container-low: #f5f3ef;
+  --c-surface-container: #eeebe6;
+  --c-surface-container-high: #e8e5e0;
+  --c-muted: #f0ede8;
+  --c-muted-foreground: #6b6560;
+  --c-foreground: #2d2d2d;
+  --c-foreground-secondary: #555555;
+  --c-foreground-tertiary: #888888;
+  --c-foreground-inverse: #ffffff;
+  --c-border: #e2dfda;
+  --c-border-strong: #c9c5bf;
+  --c-sat-accent: #2b7de9;
+  --c-onmyown-accent: #2d8a56;
+  --c-cloudex-accent: #1a6fb5;
+  --c-agentshow-accent: #7c3aed;
+  --c-shadow-sm: 0 1px 2px rgba(45,45,45,0.06);
+  --c-shadow-md: 0 4px 8px rgba(45,45,45,0.08);
+  --c-shadow-lg: 0 8px 24px rgba(45,45,45,0.10);
+  --c-shadow-xl: 0 16px 48px rgba(45,45,45,0.12);
+  --c-radius-sm: 4px;
+  --c-radius-md: 8px;
+  --c-radius-lg: 12px;
+  --c-radius-xl: 16px;
+  --c-font-sans: "PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+  --c-font-heading: "PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+  --c-text-xs: 0.75rem;
+  --c-text-sm: 0.875rem;
+  --c-text-base: 1rem;
+  --c-text-lg: 1.125rem;
+  --c-text-xl: 1.25rem;
+  --c-text-2xl: 1.5rem;
+  --c-text-3xl: 1.875rem;
+  --c-text-4xl: 2.25rem;
+  --c-text-5xl: 3rem;
+  --c-text-display: clamp(2.25rem,5vw,3.75rem);
+  --c-leading-tight: 1.25;
+  --c-leading-normal: 1.6;
+  --c-leading-relaxed: 1.75;
+}
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.1/dist/index.global.js"></script>
+    <script src="https://unpkg.com/lucide@1.8.0/dist/umd/lucide.min.js"></script>
+    <style type="text/tailwindcss">
+    @theme inline {
+      --color-primary: var(--c-primary);
+      --color-foreground: var(--c-foreground);
+      --color-background: var(--c-background);
+      --color-muted: var(--c-muted);
+      --color-surface: var(--c-surface);
+      --color-border: var(--c-border);
+    }
+  @layer base {
+    body { background: var(--c-background); color: var(--c-foreground); font-family: var(--c-font-sans); }
+    td, th { @apply break-words; word-break: break-all; word-break: auto-phrase; }
+    th { @apply whitespace-nowrap; }
+  }
+    </style>
+    <style>
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      [data-icon] { display: inline-flex; align-items: center; justify-content: center; -webkit-mask-size: contain; mask-size: contain; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-position: center; mask-position: center; background-color: currentColor; }
+    </style>
+</head>
+<body class="min-h-screen font-sans antialiased">
+
+<nav class="w-full border-b" style="border-color: var(--c-border); background: var(--c-surface);">
+    <div class="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center gap-2 shrink-0">
+            <img src="../assets/c-logo-main.png" alt="C社" class="h-[88px] w-auto">
+        </a>
+        <div class="flex items-center gap-6">
+            <a href="index.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-70" style="color: var(--c-foreground-secondary);">首页</a>
+            <a href="about.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-70" style="color: var(--c-primary); font-weight: 600;">关于C社</a>
+            <a href="projects.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-70" style="color: var(--c-foreground-secondary);">核心项目</a>
+            <a href="benefits.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-70" style="color: var(--c-foreground-secondary);">成员收益</a>
+            <a href="join.html" class="inline-flex items-center whitespace-nowrap px-4 py-2 rounded-lg text-sm font-semibold transition-colors duration-200 hover:opacity-90" style="background: var(--c-primary); color: var(--c-foreground-inverse);">加入我们</a>
+        </div>
+    </div>
+</nav>
+
+<main>
+    <!-- Sub-nav -->
+    <div class="border-b" style="border-color: var(--c-border); background: var(--c-surface-container-low);">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex items-center gap-8 overflow-x-auto no-scrollbar py-3">
+                <a href="about-positioning.html" class="text-sm whitespace-nowrap transition-colors duration-200" style="color: var(--c-primary); font-weight: 600;">C社定位</a>
+                <a href="about-theory.html" class="text-sm whitespace-nowrap transition-colors duration-200" style="color: var(--c-foreground-secondary);">价值理论</a>
+                <a href="about-alliance.html" class="text-sm whitespace-nowrap transition-colors duration-200" style="color: var(--c-foreground-secondary);">结盟之道</a>
+            </div>
+        </div>
+    </div>
+
+    <section class="py-20 md:py-28">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="max-w-3xl">
+                <h1 style="font-size: clamp(24px, 3vw, 36px); font-weight: 700; color: var(--c-foreground); text-wrap: balance;">C社定位</h1>
+                <p class="mt-6" style="font-size: var(--c-text-lg); line-height: var(--c-leading-relaxed); color: var(--c-foreground-secondary);">C社的本质定义是什么？用一句话概括：C社是一个共创共享的商业化协作社区。这个定义包含三个关键词——共创、共享、商业化协作。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slogan as design element -->
+    <section class="py-16" style="background: var(--c-foreground);">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <p class="text-3xl md:text-4xl font-bold tracking-wide" style="color: var(--c-foreground-inverse);">一起做，更有利</p>
+        </div>
+    </section>
+
+    <!-- Core Positioning -->
+    <section class="py-20 md:py-28">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="max-w-3xl">
+                <h2 class="mb-8" style="font-size: clamp(24px, 3vw, 36px); font-weight: 700; color: var(--c-foreground); text-wrap: balance;">核心定位</h2>
+
+                <h3 class="mb-4" style="font-size: var(--c-text-xl); font-weight: 600; color: var(--c-foreground);">建设性结盟</h3>
+                <p class="mb-8" style="font-size: var(--c-text-base); line-height: var(--c-leading-relaxed); color: var(--c-foreground-secondary);">C社的结盟方式是建设性的——围绕真实的商业项目展开协作。成员不是被动员起来对抗某个外部力量，而是被组织起来共同创造价值。建设性结盟的核心在于：每个参与者都能在协作中获得切实的收益，从而形成稳定的正向循环。</p>
+
+                <h3 class="mb-4" style="font-size: var(--c-text-xl); font-weight: 600; color: var(--c-foreground);">不是对抗性结盟</h3>
+                <p class="mb-8" style="font-size: var(--c-text-base); line-height: var(--c-leading-relaxed); color: var(--c-foreground-secondary);">C社不追求与任何群体的对抗关系。对抗性结盟往往需要明确的外部敌人，这在现实中容易导致内部团结的脆弱——当外部压力消失时，联盟也随即瓦解。建设性结盟的根基是共同创造的价值，这种关系更加持久和稳固。</p>
+
+                <h3 class="mb-4" style="font-size: var(--c-text-xl); font-weight: 600; color: var(--c-foreground);">四大项目构成完整生态</h3>
+                <p class="mb-8" style="font-size: var(--c-text-base); line-height: var(--c-leading-relaxed); color: var(--c-foreground-secondary);">C社通过四个核心项目来承载"共创共享"的理念：SAT负责AI能力建设，Onmyown负责个人创业赋能，Cloudex负责留学服务，Agentshow负责内容传播。四个项目在资源与流量层面深度协同，共同构成一个相互支撑的生态系统。</p>
+
+                <div class="border rounded-xl p-8" style="border-color: var(--c-border); box-shadow: var(--c-shadow-sm); background: var(--c-surface);">
+                    <h3 class="mb-4" style="font-size: var(--c-text-xl); font-weight: 600; color: var(--c-foreground);">C社是什么</h3>
+                    <ul class="space-y-4" style="font-size: var(--c-text-base); line-height: var(--c-leading-relaxed); color: var(--c-foreground-secondary);">
+                        <li class="flex items-start gap-3">
+                            <span class="shrink-0 w-1.5 h-1.5 rounded-full mt-2" style="background: var(--c-primary);"></span>
+                            <span>一个面向普通人的AI时代协作社区</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="shrink-0 w-1.5 h-1.5 rounded-full mt-2" style="background: var(--c-primary);"></span>
+                            <span>以真实商业项目为协作载体</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="shrink-0 w-1.5 h-1.5 rounded-full mt-2" style="background: var(--c-primary);"></span>
+                            <span>通过共创共享实现个体价值提升</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="shrink-0 w-1.5 h-1.5 rounded-full mt-2" style="background: var(--c-primary);"></span>
+                            <span>建设性结盟，非对抗性组织</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related -->
+    <section class="pb-20 md:pb-28">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="mb-8" style="font-size: clamp(20px, 2.5vw, 28px); font-weight: 700; color: var(--c-foreground);">相关阅读</h2>
+            <div class="flex gap-6 overflow-x-auto no-scrollbar">
+                <a href="about-theory.html" class="shrink-0 border rounded-xl p-6 w-64 transition-all duration-200 hover:shadow-md" style="border-color: var(--c-border); box-shadow: var(--c-shadow-sm); background: var(--c-surface);">
+                    <h3 class="font-semibold mb-2" style="color: var(--c-foreground);">价值理论</h3>
+                    <p class="text-sm" style="color: var(--c-muted-foreground);">了解C社背后的价值判断与理论框架</p>
+                </a>
+                <a href="about-alliance.html" class="shrink-0 border rounded-xl p-6 w-64 transition-all duration-200 hover:shadow-md" style="border-color: var(--c-border); box-shadow: var(--c-shadow-sm); background: var(--c-surface);">
+                    <h3 class="font-semibold mb-2" style="color: var(--c-foreground);">结盟之道</h3>
+                    <p class="text-sm" style="color: var(--c-muted-foreground);">结盟的历史先例与C社的实践路径</p>
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="px-6 py-12" style="background: var(--c-foreground);">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start justify-between gap-8">
+        <div class="flex items-center gap-3">
+            <img src="../assets/c-logo-white-bg.png" alt="C社" class="h-[68px] w-auto brightness-0 invert opacity-90">
+            <span class="text-sm font-medium" style="color: rgba(255,255,255,0.7);">一起做，更有利</span>
+        </div>
+        <div class="flex items-center gap-6">
+            <a href="index.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-80" style="color: rgba(255,255,255,0.5);">首页</a>
+            <a href="about.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-80" style="color: rgba(255,255,255,0.5);">关于C社</a>
+            <a href="projects.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-80" style="color: rgba(255,255,255,0.5);">核心项目</a>
+            <a href="benefits.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-80" style="color: rgba(255,255,255,0.5);">成员收益</a>
+            <a href="join.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-80" style="color: rgba(255,255,255,0.5);">加入我们</a>
+        </div>
+        <p class="text-xs" style="color: rgba(255,255,255,0.35);">&copy; 2026 C社. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>lucide.createIcons();</script>
+</body>
+</html>
