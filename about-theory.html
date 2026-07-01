@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>价值理论 - C社</title>
+    <style id="theme-vars">
+:root {
+  --c-primary: #f03c1e;
+  --c-primary-light: #f4633d;
+  --c-primary-dark: #c9301a;
+  --c-gold: #ffd200;
+  --c-gold-light: #ffe14d;
+  --c-gold-dark: #d4ad00;
+  --c-background: #faf8f5;
+  --c-surface: #ffffff;
+  --c-surface-container-low: #f5f3ef;
+  --c-surface-container: #eeebe6;
+  --c-surface-container-high: #e8e5e0;
+  --c-muted: #f0ede8;
+  --c-muted-foreground: #6b6560;
+  --c-foreground: #2d2d2d;
+  --c-foreground-secondary: #555555;
+  --c-foreground-tertiary: #888888;
+  --c-foreground-inverse: #ffffff;
+  --c-border: #e2dfda;
+  --c-border-strong: #c9c5bf;
+  --c-sat-accent: #2b7de9;
+  --c-onmyown-accent: #2d8a56;
+  --c-cloudex-accent: #1a6fb5;
+  --c-agentshow-accent: #7c3aed;
+  --c-shadow-sm: 0 1px 2px rgba(45,45,45,0.06);
+  --c-shadow-md: 0 4px 8px rgba(45,45,45,0.08);
+  --c-shadow-lg: 0 8px 24px rgba(45,45,45,0.10);
+  --c-shadow-xl: 0 16px 48px rgba(45,45,45,0.12);
+  --c-radius-sm: 4px;
+  --c-radius-md: 8px;
+  --c-radius-lg: 12px;
+  --c-radius-xl: 16px;
+  --c-font-sans: "PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+  --c-font-heading: "PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+  --c-text-xs: 0.75rem;
+  --c-text-sm: 0.875rem;
+  --c-text-base: 1rem;
+  --c-text-lg: 1.125rem;
+  --c-text-xl: 1.25rem;
+  --c-text-2xl: 1.5rem;
+  --c-text-3xl: 1.875rem;
+  --c-text-4xl: 2.25rem;
+  --c-text-5xl: 3rem;
+  --c-text-display: clamp(2.25rem,5vw,3.75rem);
+  --c-leading-tight: 1.25;
+  --c-leading-normal: 1.6;
+  --c-leading-relaxed: 1.75;
+}
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.1/dist/index.global.js"></script>
+    <script src="https://unpkg.com/lucide@1.8.0/dist/umd/lucide.min.js"></script>
+    <style type="text/tailwindcss">
+    @theme inline {
+      --color-primary: var(--c-primary);
+      --color-foreground: var(--c-foreground);
+      --color-background: var(--c-background);
+      --color-muted: var(--c-muted);
+      --color-surface: var(--c-surface);
+      --color-border: var(--c-border);
+    }
+  @layer base {
+    body { background: var(--c-background); color: var(--c-foreground); font-family: var(--c-font-sans); }
+    td, th { @apply break-words; word-break: break-all; word-break: auto-phrase; }
+    th { @apply whitespace-nowrap; }
+  }
+    </style>
+    <style>
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      [data-icon] { display: inline-flex; align-items: center; justify-content: center; -webkit-mask-size: contain; mask-size: contain; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-position: center; mask-position: center; background-color: currentColor; }
+    </style>
+</head>
+<body class="min-h-screen font-sans antialiased">
+
+<nav class="w-full border-b" style="border-color: var(--c-border); background: var(--c-surface);">
+    <div class="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center gap-2 shrink-0">
+            <img src="../assets/c-logo-main.png" alt="C社" class="h-[88px] w-auto">
+        </a>
+        <div class="flex items-center gap-6">
+            <a href="index.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-70" style="color: var(--c-foreground-secondary);">首页</a>
+            <a href="about.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-70" style="color: var(--c-primary); font-weight: 600;">关于C社</a>
+            <a href="projects.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-70" style="color: var(--c-foreground-secondary);">核心项目</a>
+            <a href="benefits.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-70" style="color: var(--c-foreground-secondary);">成员收益</a>
+            <a href="join.html" class="inline-flex items-center whitespace-nowrap px-4 py-2 rounded-lg text-sm font-semibold transition-colors duration-200 hover:opacity-90" style="background: var(--c-primary); color: var(--c-foreground-inverse);">加入我们</a>
+        </div>
+    </div>
+</nav>
+
+<main>
+    <!-- Sub-nav -->
+    <div class="border-b" style="border-color: var(--c-border); background: var(--c-surface-container-low);">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex items-center gap-8 overflow-x-auto no-scrollbar py-3">
+                <a href="about-positioning.html" class="text-sm whitespace-nowrap transition-colors duration-200" style="color: var(--c-foreground-secondary);">C社定位</a>
+                <a href="about-theory.html" class="text-sm whitespace-nowrap transition-colors duration-200" style="color: var(--c-primary); font-weight: 600;">价值理论</a>
+                <a href="about-alliance.html" class="text-sm whitespace-nowrap transition-colors duration-200" style="color: var(--c-foreground-secondary);">结盟之道</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Intro -->
+    <section class="py-20 md:py-28">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="max-w-3xl">
+                <h1 style="font-size: clamp(24px, 3vw, 36px); font-weight: 700; color: var(--c-foreground); text-wrap: balance;">价值理论</h1>
+                <p class="mt-6" style="font-size: var(--c-text-lg); line-height: var(--c-leading-relaxed); color: var(--c-foreground-secondary);">AI时代面临一个深刻的悖论：生产力的飞跃与普遍的焦虑并存。技术进步创造了前所未有的可能，但普通人并没有因此感到更加安全和自信。相反，就业压力、技能焦虑和资源壁垒正在加剧。C社的价值理论，正是从这一悖论出发的。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Four Realities -->
+    <section class="pb-20 md:pb-28">
+        <div class="max-w-6xl mx-auto px-6 space-y-20">
+
+            <!-- 现实一 -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
+                <div class="md:col-span-4">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-4xl font-bold" style="color: var(--c-primary);">01</span>
+                    </div>
+                    <h2 style="font-size: var(--c-text-2xl); font-weight: 700; color: var(--c-foreground);">AI对劳动的替代</h2>
+                </div>
+                <div class="md:col-span-8">
+                    <p class="mb-6" style="font-size: var(--c-text-base); line-height: var(--c-leading-relaxed); color: var(--c-foreground-secondary);">AI不仅替代重复性劳动，正在加速向知识型工作渗透。2023至2026年间，全球科技行业经历了大规模裁员，大量知识工作者面临职业重新定位的挑战。这不仅是技术问题，更是社会问题——当机器可以完成越来越多的工作，普通人的劳动价值如何重新定义？</p>
+                    <div class="border rounded-lg p-4 mb-6" style="border-color: var(--c-border); background: var(--c-surface-container-low);">
+                        <p class="text-sm" style="color: var(--c-muted-foreground);">关键数据：2023-2026年全球科技行业累计裁员超过数十万人，涉及工程师、设计师、产品经理等知识型岗位。</p>
+                    </div>
+                    <a href="projects-sat.html" class="inline-flex items-center gap-1 text-sm" style="color: var(--c-primary);">
+                        <span>了解SAT如何应对</span>
+                        <i data-icon="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+
+            <hr style="border-color: var(--c-border);">
+
+            <!-- 现实二 -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
+                <div class="md:col-span-4">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-4xl font-bold" style="color: var(--c-primary);">02</span>
+                    </div>
+                    <h2 style="font-size: var(--c-text-2xl); font-weight: 700; color: var(--c-foreground);">垄断性资源占有</h2>
+                </div>
+                <div class="md:col-span-8">
+                    <p class="mb-6" style="font-size: var(--c-text-base); line-height: var(--c-leading-relaxed); color: var(--c-foreground-secondary);">AI时代的核心资源集中在五个维度：算力、算法、数据、资本和分发渠道。这五个维度的高度垄断，意味着普通人即便掌握了AI工具的使用方法，仍然难以获得与巨头平等竞争的机会。资源壁垒的存在，是普通人AI焦虑的结构性根源。</p>
+                    <div class="grid grid-cols-5 gap-3 mb-6">
+                        <div class="text-center border rounded-lg p-3" style="border-color: var(--c-border); background: var(--c-surface);">
+                            <p class="text-xs font-semibold" style="color: var(--c-foreground);">算力</p>
+                        </div>
+                        <div class="text-center border rounded-lg p-3" style="border-color: var(--c-border); background: var(--c-surface);">
+                            <p class="text-xs font-semibold" style="color: var(--c-foreground);">算法</p>
+                        </div>
+                        <div class="text-center border rounded-lg p-3" style="border-color: var(--c-border); background: var(--c-surface);">
+                            <p class="text-xs font-semibold" style="color: var(--c-foreground);">数据</p>
+                        </div>
+                        <div class="text-center border rounded-lg p-3" style="border-color: var(--c-border); background: var(--c-surface);">
+                            <p class="text-xs font-semibold" style="color: var(--c-foreground);">资本</p>
+                        </div>
+                        <div class="text-center border rounded-lg p-3" style="border-color: var(--c-border); background: var(--c-surface);">
+                            <p class="text-xs font-semibold" style="color: var(--c-foreground);">分发</p>
+                        </div>
+                    </div>
+                    <a href="projects-onmyown.html" class="inline-flex items-center gap-1 text-sm" style="color: var(--c-primary);">
+                        <span>了解Onmyown如何应对</span>
+                        <i data-icon="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+
+            <hr style="border-color: var(--c-border);">
+
+            <!-- 现实三 -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
+                <div class="md:col-span-4">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-4xl font-bold" style="color: var(--c-primary);">03</span>
+                    </div>
+                    <h2 style="font-size: var(--c-text-2xl); font-weight: 700; color: var(--c-foreground);">工具习得的困境</h2>
+                </div>
+                <div class="md:col-span-8">
+                    <p class="mb-6" style="font-size: var(--c-text-base); line-height: var(--c-leading-relaxed); color: var(--c-foreground-secondary);">"学会开车"是一个精确的比喻：当汽车发明的时候，社会并不要求每个人都成为机械工程师，而是出现了驾驶学校和公路系统，让普通人能够以较低的成本掌握驾驶技能。AI工具的使用也是如此——关键不在于理解底层原理，而在于掌握使用方法并将其应用到实际场景中。然而，目前的AI教育市场充斥着两种极端：要么过度理论化，要么过度商业化。</p>
+                    <div class="mb-6" style="border-left: 4px solid var(--c-primary); padding-left: 24px; font-size: var(--c-text-xl); color: var(--c-foreground); font-style: italic;">社会的需求不是让每个人都成为AI工程师，而是让每个人都能有效使用AI工具。</div>
+                    <a href="projects-sat.html" class="inline-flex items-center gap-1 text-sm" style="color: var(--c-primary);">
+                        <span>了解SAT的学习方法论</span>
+                        <i data-icon="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+
+            <hr style="border-color: var(--c-border);">
+
+            <!-- 现实四 -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
+                <div class="md:col-span-4">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-4xl font-bold" style="color: var(--c-primary);">04</span>
+                    </div>
+                    <h2 style="font-size: var(--c-text-2xl); font-weight: 700; color: var(--c-foreground);">资本的飞轮效应</h2>
+                </div>
+                <div class="md:col-span-8">
+                    <p class="mb-6" style="font-size: var(--c-text-base); line-height: var(--c-leading-relaxed); color: var(--c-foreground-secondary);">资本、资源和人才之间存在一个自我强化的飞轮效应：拥有资本的企业可以获取更多资源，更多资源吸引更优秀的人才，更优秀的人才创造更大的价值，从而吸引更多资本。这个飞轮使得资源优势者越跑越快，而普通人如果缺乏进入这个循环的入口，差距只会持续扩大。</p>
+                    <p class="mb-6" style="font-size: var(--c-text-base); line-height: var(--c-leading-relaxed); color: var(--c-foreground-secondary);">C社的回应是：通过结盟，为普通人提供一个替代性的飞轮入口。当个体以集体方式获取资源、分享工具、协作运营项目时，就在一定程度上打破了单一资本飞轮的垄断效应。</p>
+                    <a href="about-alliance.html" class="inline-flex items-center gap-1 text-sm" style="color: var(--c-primary);">
+                        <span>了解结盟之道</span>
+                        <i data-icon="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<footer class="px-6 py-12" style="background: var(--c-foreground);">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start justify-between gap-8">
+        <div class="flex items-center gap-3">
+            <img src="../assets/c-logo-white-bg.png" alt="C社" class="h-[68px] w-auto brightness-0 invert opacity-90">
+            <span class="text-sm font-medium" style="color: rgba(255,255,255,0.7);">一起做，更有利</span>
+        </div>
+        <div class="flex items-center gap-6">
+            <a href="index.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-80" style="color: rgba(255,255,255,0.5);">首页</a>
+            <a href="about.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-80" style="color: rgba(255,255,255,0.5);">关于C社</a>
+            <a href="projects.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-80" style="color: rgba(255,255,255,0.5);">核心项目</a>
+            <a href="benefits.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-80" style="color: rgba(255,255,255,0.5);">成员收益</a>
+            <a href="join.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-80" style="color: rgba(255,255,255,0.5);">加入我们</a>
+        </div>
+        <p class="text-xs" style="color: rgba(255,255,255,0.35);">&copy; 2026 C社. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>lucide.createIcons();</script>
+</body>
+</html>
