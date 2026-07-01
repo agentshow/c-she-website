@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>结盟之道 - C社</title>
+    <style id="theme-vars">
+:root {
+  --c-primary: #f03c1e;
+  --c-primary-light: #f4633d;
+  --c-primary-dark: #c9301a;
+  --c-gold: #ffd200;
+  --c-gold-light: #ffe14d;
+  --c-gold-dark: #d4ad00;
+  --c-background: #faf8f5;
+  --c-surface: #ffffff;
+  --c-surface-container-low: #f5f3ef;
+  --c-surface-container: #eeebe6;
+  --c-surface-container-high: #e8e5e0;
+  --c-muted: #f0ede8;
+  --c-muted-foreground: #6b6560;
+  --c-foreground: #2d2d2d;
+  --c-foreground-secondary: #555555;
+  --c-foreground-tertiary: #888888;
+  --c-foreground-inverse: #ffffff;
+  --c-border: #e2dfda;
+  --c-border-strong: #c9c5bf;
+  --c-sat-accent: #2b7de9;
+  --c-onmyown-accent: #2d8a56;
+  --c-cloudex-accent: #1a6fb5;
+  --c-agentshow-accent: #7c3aed;
+  --c-shadow-sm: 0 1px 2px rgba(45,45,45,0.06);
+  --c-shadow-md: 0 4px 8px rgba(45,45,45,0.08);
+  --c-shadow-lg: 0 8px 24px rgba(45,45,45,0.10);
+  --c-shadow-xl: 0 16px 48px rgba(45,45,45,0.12);
+  --c-radius-sm: 4px;
+  --c-radius-md: 8px;
+  --c-radius-lg: 12px;
+  --c-radius-xl: 16px;
+  --c-font-sans: "PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+  --c-font-heading: "PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+  --c-text-xs: 0.75rem;
+  --c-text-sm: 0.875rem;
+  --c-text-base: 1rem;
+  --c-text-lg: 1.125rem;
+  --c-text-xl: 1.25rem;
+  --c-text-2xl: 1.5rem;
+  --c-text-3xl: 1.875rem;
+  --c-text-4xl: 2.25rem;
+  --c-text-5xl: 3rem;
+  --c-text-display: clamp(2.25rem,5vw,3.75rem);
+  --c-leading-tight: 1.25;
+  --c-leading-normal: 1.6;
+  --c-leading-relaxed: 1.75;
+}
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.1/dist/index.global.js"></script>
+    <script src="https://unpkg.com/lucide@1.8.0/dist/umd/lucide.min.js"></script>
+    <style type="text/tailwindcss">
+    @theme inline {
+      --color-primary: var(--c-primary);
+      --color-foreground: var(--c-foreground);
+      --color-background: var(--c-background);
+      --color-muted: var(--c-muted);
+      --color-surface: var(--c-surface);
+      --color-border: var(--c-border);
+    }
+  @layer base {
+    body { background: var(--c-background); color: var(--c-foreground); font-family: var(--c-font-sans); }
+    td, th { @apply break-words; word-break: break-all; word-break: auto-phrase; }
+    th { @apply whitespace-nowrap; }
+  }
+    </style>
+    <style>
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      [data-icon] { display: inline-flex; align-items: center; justify-content: center; -webkit-mask-size: contain; mask-size: contain; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-position: center; mask-position: center; background-color: currentColor; }
+    </style>
+</head>
+<body class="min-h-screen font-sans antialiased">
+
+<nav class="w-full border-b" style="border-color: var(--c-border); background: var(--c-surface);">
+    <div class="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center gap-2 shrink-0">
+            <img src="../assets/c-logo-main.png" alt="C社" class="h-[88px] w-auto">
+        </a>
+        <div class="flex items-center gap-6">
+            <a href="index.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-70" style="color: var(--c-foreground-secondary);">首页</a>
+            <a href="about.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-70" style="color: var(--c-primary); font-weight: 600;">关于C社</a>
+            <a href="projects.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-70" style="color: var(--c-foreground-secondary);">核心项目</a>
+            <a href="benefits.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-70" style="color: var(--c-foreground-secondary);">成员收益</a>
+            <a href="join.html" class="inline-flex items-center whitespace-nowrap px-4 py-2 rounded-lg text-sm font-semibold transition-colors duration-200 hover:opacity-90" style="background: var(--c-primary); color: var(--c-foreground-inverse);">加入我们</a>
+        </div>
+    </div>
+</nav>
+
+<main>
+    <!-- Sub-nav -->
+    <div class="border-b" style="border-color: var(--c-border); background: var(--c-surface-container-low);">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex items-center gap-8 overflow-x-auto no-scrollbar py-3">
+                <a href="about-positioning.html" class="text-sm whitespace-nowrap transition-colors duration-200" style="color: var(--c-foreground-secondary);">C社定位</a>
+                <a href="about-theory.html" class="text-sm whitespace-nowrap transition-colors duration-200" style="color: var(--c-foreground-secondary);">价值理论</a>
+                <a href="about-alliance.html" class="text-sm whitespace-nowrap transition-colors duration-200" style="color: var(--c-primary); font-weight: 600;">结盟之道</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Intro -->
+    <section class="py-20 md:py-28">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="max-w-3xl">
+                <h1 style="font-size: clamp(24px, 3vw, 36px); font-weight: 700; color: var(--c-foreground); text-wrap: balance;">结盟之道</h1>
+                <p class="mt-6" style="font-size: var(--c-text-lg); line-height: var(--c-leading-relaxed); color: var(--c-foreground-secondary);">结盟不是C社的发明，而是人类社会中反复出现的集体行动模式。从工会运动到开源软件，历史上的每一次成功结盟都遵循相似的底层逻辑。理解这些先例，有助于我们更清晰地看到C社的方向。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Historical Precedents -->
+    <section class="pb-20">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="mb-12" style="font-size: clamp(24px, 3vw, 36px); font-weight: 700; color: var(--c-foreground); text-wrap: balance;">历史上的结盟先例</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="border rounded-xl p-8" style="border-color: var(--c-border); box-shadow: var(--c-shadow-sm); background: var(--c-surface);">
+                    <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-6" style="background: var(--c-muted);">
+                        <i data-icon="users" class="w-5 h-5" style="color: var(--c-primary);"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-3" style="color: var(--c-foreground);">工会运动</h3>
+                    <p style="font-size: var(--c-text-base); line-height: var(--c-leading-relaxed); color: var(--c-foreground-secondary);">工业革命时期，个体工人面对资本毫无议价能力。工会运动通过集体谈判，为劳动者争取到了合理的工作条件和报酬。其核心启示：分散的个体通过组织化行动，可以显著改变博弈均衡。</p>
+                </div>
+                <div class="border rounded-xl p-8" style="border-color: var(--c-border); box-shadow: var(--c-shadow-sm); background: var(--c-surface);">
+                    <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-6" style="background: var(--c-muted);">
+                        <i data-icon="wheat" class="w-5 h-5" style="color: var(--c-primary);"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-3" style="color: var(--c-foreground);">农业合作社</h3>
+                    <p style="font-size: var(--c-text-base); line-height: var(--c-leading-relaxed); color: var(--c-foreground-secondary);">面对大型农业企业的竞争，个体农民通过合作社模式实现了资源整合与规模效应。共同采购降低成本、共同销售增强议价能力。其核心启示：协作可以产生个体无法企及的规模优势。</p>
+                </div>
+                <div class="border rounded-xl p-8" style="border-color: var(--c-border); box-shadow: var(--c-shadow-sm); background: var(--c-surface);">
+                    <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-6" style="background: var(--c-muted);">
+                        <i data-icon="building-2" class="w-5 h-5" style="color: var(--c-primary);"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-3" style="color: var(--c-foreground);">现代公司制度</h3>
+                    <p style="font-size: var(--c-text-base); line-height: var(--c-leading-relaxed); color: var(--c-foreground-secondary);">公司制度本质上是一种结盟形式：多个投资者将资源汇聚到一起，由专业团队运营，按照约定分配收益。其核心启示：良好的规则设计和激励机制是结盟持续运转的制度基础。</p>
+                </div>
+                <div class="border rounded-xl p-8" style="border-color: var(--c-border); box-shadow: var(--c-shadow-sm); background: var(--c-surface);">
+                    <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-6" style="background: var(--c-muted);">
+                        <i data-icon="code-2" class="w-5 h-5" style="color: var(--c-primary);"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-3" style="color: var(--c-foreground);">开源软件运动</h3>
+                    <p style="font-size: var(--c-text-base); line-height: var(--c-leading-relaxed); color: var(--c-foreground-secondary);">开源运动证明了全球范围内的去中心化协作是可行的。数百万开发者在没有中央指挥的情况下，共同构建了支撑现代互联网的基础设施。其核心启示：共享和共创可以产生超越任何单一组织的成果。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Three Conditions -->
+    <section class="py-20 md:py-28" style="background: var(--c-surface-container-low);">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="max-w-3xl">
+                <h2 class="mb-12" style="font-size: clamp(24px, 3vw, 36px); font-weight: 700; color: var(--c-foreground); text-wrap: balance;">有效结盟的三个条件</h2>
+
+                <div class="space-y-10">
+                    <div>
+                        <h3 class="mb-3" style="font-size: var(--c-text-xl); font-weight: 600; color: var(--c-foreground);">共同目标</h3>
+                        <p style="font-size: var(--c-text-base); line-height: var(--c-leading-relaxed); color: var(--c-foreground-secondary);">结盟的参与者需要有一个共同的目标——这个目标不是抽象的理念，而是具体可感知的需求。C社的共同目标是：在AI时代通过协作获得更好的发展机会。这个目标足够具体，也足够广泛，能够吸引不同背景的个体。</p>
+                    </div>
+                    <div>
+                        <h3 class="mb-3" style="font-size: var(--c-text-xl); font-weight: 600; color: var(--c-foreground);">公平激励</h3>
+                        <p style="font-size: var(--c-text-base); line-height: var(--c-leading-relaxed); color: var(--c-foreground-secondary);">贡献与回报之间必须有公平的对应关系。如果结盟的成果被少数人独占，大多数参与者就会退出。C社通过明确的项目参与机制和贡献记录系统，确保每个成员的付出都能获得相应的认可和回报。</p>
+                    </div>
+                    <div>
+                        <h3 class="mb-3" style="font-size: var(--c-text-xl); font-weight: 600; color: var(--c-foreground);">具体事业</h3>
+                        <p style="font-size: var(--c-text-base); line-height: var(--c-leading-relaxed); color: var(--c-foreground-secondary);">结盟需要一个具体的事业载体，而非仅仅停留在理念层面。C社的四个核心项目就是这样的载体——成员通过参与SAT、Onmyown、Cloudex或Agentshow的具体工作，将结盟从概念转化为实践。有具体事业支撑的结盟，才具有持续的生命力。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pull Quote -->
+    <section class="py-20 md:py-28">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="mb-8" style="border-left: 4px solid var(--c-primary); padding-left: 24px; font-size: var(--c-text-xl); color: var(--c-foreground); font-style: italic; text-align: left;">孤立的个体是弱小的，但以恰当规则组织起来的个体，可以形成改变博弈均衡的集体力量。</div>
+            <a href="join.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold transition-colors duration-200 hover:opacity-90" style="background: var(--c-primary); color: var(--c-foreground-inverse);">
+                加入C社
+                <i data-icon="arrow-right" class="w-4 h-4"></i>
+            </a>
+        </div>
+    </section>
+</main>
+
+<footer class="px-6 py-12" style="background: var(--c-foreground);">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start justify-between gap-8">
+        <div class="flex items-center gap-3">
+            <img src="../assets/c-logo-white-bg.png" alt="C社" class="h-[68px] w-auto brightness-0 invert opacity-90">
+            <span class="text-sm font-medium" style="color: rgba(255,255,255,0.7);">一起做，更有利</span>
+        </div>
+        <div class="flex items-center gap-6">
+            <a href="index.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-80" style="color: rgba(255,255,255,0.5);">首页</a>
+            <a href="about.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-80" style="color: rgba(255,255,255,0.5);">关于C社</a>
+            <a href="projects.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-80" style="color: rgba(255,255,255,0.5);">核心项目</a>
+            <a href="benefits.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-80" style="color: rgba(255,255,255,0.5);">成员收益</a>
+            <a href="join.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-80" style="color: rgba(255,255,255,0.5);">加入我们</a>
+        </div>
+        <p class="text-xs" style="color: rgba(255,255,255,0.35);">&copy; 2026 C社. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>lucide.createIcons();</script>
+</body>
+</html>
