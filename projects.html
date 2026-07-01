@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>核心项目 - C社</title>
+    <style id="theme-vars">
+:root {
+  --c-primary: #f03c1e;
+  --c-primary-light: #f4633d;
+  --c-primary-dark: #c9301a;
+  --c-gold: #ffd200;
+  --c-gold-light: #ffe14d;
+  --c-gold-dark: #d4ad00;
+  --c-background: #faf8f5;
+  --c-surface: #ffffff;
+  --c-surface-container-low: #f5f3ef;
+  --c-surface-container: #eeebe6;
+  --c-surface-container-high: #e8e5e0;
+  --c-muted: #f0ede8;
+  --c-muted-foreground: #6b6560;
+  --c-foreground: #2d2d2d;
+  --c-foreground-secondary: #555555;
+  --c-foreground-tertiary: #888888;
+  --c-foreground-inverse: #ffffff;
+  --c-border: #e2dfda;
+  --c-border-strong: #c9c5bf;
+  --c-sat-accent: #2b7de9;
+  --c-onmyown-accent: #2d8a56;
+  --c-cloudex-accent: #1a6fb5;
+  --c-agentshow-accent: #7c3aed;
+  --c-shadow-sm: 0 1px 2px rgba(45,45,45,0.06);
+  --c-shadow-md: 0 4px 8px rgba(45,45,45,0.08);
+  --c-shadow-lg: 0 8px 24px rgba(45,45,45,0.10);
+  --c-shadow-xl: 0 16px 48px rgba(45,45,45,0.12);
+  --c-radius-sm: 4px;
+  --c-radius-md: 8px;
+  --c-radius-lg: 12px;
+  --c-radius-xl: 16px;
+  --c-font-sans: "PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+  --c-font-heading: "PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+  --c-text-xs: 0.75rem;
+  --c-text-sm: 0.875rem;
+  --c-text-base: 1rem;
+  --c-text-lg: 1.125rem;
+  --c-text-xl: 1.25rem;
+  --c-text-2xl: 1.5rem;
+  --c-text-3xl: 1.875rem;
+  --c-text-4xl: 2.25rem;
+  --c-text-5xl: 3rem;
+  --c-text-display: clamp(2.25rem,5vw,3.75rem);
+  --c-leading-tight: 1.25;
+  --c-leading-normal: 1.6;
+  --c-leading-relaxed: 1.75;
+}
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.1/dist/index.global.js"></script>
+    <script src="https://unpkg.com/lucide@1.8.0/dist/umd/lucide.min.js"></script>
+    <style type="text/tailwindcss">
+    @theme inline {
+      --color-primary: var(--c-primary);
+      --color-foreground: var(--c-foreground);
+      --color-background: var(--c-background);
+      --color-muted: var(--c-muted);
+      --color-surface: var(--c-surface);
+      --color-border: var(--c-border);
+    }
+  @layer base {
+    body { background: var(--c-background); color: var(--c-foreground); font-family: var(--c-font-sans); }
+    td, th { @apply break-words; word-break: break-all; word-break: auto-phrase; }
+    th { @apply whitespace-nowrap; }
+  }
+    </style>
+    <style>
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      [data-icon] { display: inline-flex; align-items: center; justify-content: center; -webkit-mask-size: contain; mask-size: contain; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-position: center; mask-position: center; background-color: currentColor; }
+    </style>
+</head>
+<body class="min-h-screen font-sans antialiased">
+
+<nav class="w-full border-b" style="border-color: var(--c-border); background: var(--c-surface);">
+    <div class="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center gap-2 shrink-0">
+            <img src="../assets/c-logo-main.png" alt="C社" class="h-[88px] w-auto">
+        </a>
+        <div class="flex items-center gap-6">
+            <a href="index.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-70" style="color: var(--c-foreground-secondary);">首页</a>
+            <a href="about.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-70" style="color: var(--c-foreground-secondary);">关于C社</a>
+            <a href="projects.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-70" style="color: var(--c-primary); font-weight: 600;">核心项目</a>
+            <a href="benefits.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-70" style="color: var(--c-foreground-secondary);">成员收益</a>
+            <a href="join.html" class="inline-flex items-center whitespace-nowrap px-4 py-2 rounded-lg text-sm font-semibold transition-colors duration-200 hover:opacity-90" style="background: var(--c-primary); color: var(--c-foreground-inverse);">加入我们</a>
+        </div>
+    </div>
+</nav>
+
+<main>
+    <!-- Hero -->
+    <section class="py-20 md:py-28">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="max-w-3xl">
+                <h1 style="font-size: clamp(24px, 3vw, 36px); font-weight: 700; color: var(--c-foreground); text-wrap: balance;">核心项目</h1>
+                <p class="mt-6" style="font-size: var(--c-text-lg); line-height: var(--c-leading-relaxed); color: var(--c-foreground-secondary);">C社构建了一个相互关联的项目生态系统。四个核心项目覆盖AI能力建设、个人创业、留学服务与内容传播，既各自独立运营，又在资源与流量层面深度协同。成员可以根据自身需求参与一个或多个项目。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Cards -->
+    <section class="pb-20 md:pb-28">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                <!-- SAT -->
+                <a href="projects-sat.html" class="group block border rounded-xl overflow-hidden transition-all duration-200 hover:shadow-md" style="border-color: var(--c-border); box-shadow: var(--c-shadow-sm); background: var(--c-surface);">
+                    <div class="flex">
+                        <div class="w-2 shrink-0" style="background: #2b7de9;"></div>
+                        <div class="p-8 flex-1">
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="text-xs font-semibold px-3 py-1 rounded-full" style="background: rgba(43,125,233,0.1); color: #2b7de9;">01</span>
+                                <h3 class="text-xl font-bold" style="color: #2b7de9;">SAT</h3>
+                            </div>
+                            <p class="text-sm font-medium mb-2" style="color: var(--c-foreground);">一起学AI</p>
+                            <p style="font-size: var(--c-text-base); line-height: var(--c-leading-relaxed); color: var(--c-foreground-secondary);">以实用为导向的AI能力提升计划。不追逐热点，不贩卖焦虑，坚持"为用而学、学了能用、用了能产生价值"的学习方法论。</p>
+                            <div class="mt-6 flex items-center gap-1 text-sm" style="color: #2b7de9;">
+                                <span>了解SAT</span>
+                                <i data-icon="arrow-right" class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Onmyown -->
+                <a href="projects-onmyown.html" class="group block border rounded-xl overflow-hidden transition-all duration-200 hover:shadow-md" style="border-color: var(--c-border); box-shadow: var(--c-shadow-sm); background: var(--c-surface);">
+                    <div class="flex">
+                        <div class="w-2 shrink-0" style="background: #2d8a56;"></div>
+                        <div class="p-8 flex-1">
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="text-xs font-semibold px-3 py-1 rounded-full" style="background: rgba(45,138,86,0.1); color: #2d8a56;">02</span>
+                                <h3 class="text-xl font-bold" style="color: #2d8a56;">Onmyown</h3>
+                            </div>
+                            <p class="text-sm font-medium mb-2" style="color: var(--c-foreground);">个人创业平台</p>
+                            <p style="font-size: var(--c-text-base); line-height: var(--c-leading-relaxed); color: var(--c-foreground-secondary);">面向OPC（一人公司）时代的创业赋能平台。提供AI工具赋能、社群化推广渠道和C-Store交易市场三层支持，帮助个体实现"主权独立、生态协作"。</p>
+                            <div class="mt-6 flex items-center gap-1 text-sm" style="color: #2d8a56;">
+                                <span>了解Onmyown</span>
+                                <i data-icon="arrow-right" class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Cloudex -->
+                <a href="projects-cloudex.html" class="group block border rounded-xl overflow-hidden transition-all duration-200 hover:shadow-md" style="border-color: var(--c-border); box-shadow: var(--c-shadow-sm); background: var(--c-surface);">
+                    <div class="flex">
+                        <div class="w-2 shrink-0" style="background: #1a6fb5;"></div>
+                        <div class="p-8 flex-1">
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="text-xs font-semibold px-3 py-1 rounded-full" style="background: rgba(26,111,181,0.1); color: #1a6fb5;">03</span>
+                                <h3 class="text-xl font-bold" style="color: #1a6fb5;">Cloudex</h3>
+                            </div>
+                            <p class="text-sm font-medium mb-2" style="color: var(--c-foreground);">云递留学</p>
+                            <p style="font-size: var(--c-text-base); line-height: var(--c-leading-relaxed); color: var(--c-foreground-secondary);">以DIY理念为核心的留学支持系统。将留学申请重新定义为"第一个自我主导型项目"，通过AI工具和真实经验数据库帮助学生掌控申请全流程。</p>
+                            <div class="mt-6 flex items-center gap-1 text-sm" style="color: #1a6fb5;">
+                                <span>了解Cloudex</span>
+                                <i data-icon="arrow-right" class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Agentshow -->
+                <a href="projects-agentshow.html" class="group block border rounded-xl overflow-hidden transition-all duration-200 hover:shadow-md" style="border-color: var(--c-border); box-shadow: var(--c-shadow-sm); background: var(--c-surface);">
+                    <div class="flex">
+                        <div class="w-2 shrink-0" style="background: #7c3aed;"></div>
+                        <div class="p-8 flex-1">
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="text-xs font-semibold px-3 py-1 rounded-full" style="background: rgba(124,58,237,0.1); color: #7c3aed;">04</span>
+                                <h3 class="text-xl font-bold" style="color: #7c3aed;">Agentshow</h3>
+                            </div>
+                            <p class="text-sm font-medium mb-2" style="color: var(--c-foreground);">硅基秀</p>
+                            <p style="font-size: var(--c-text-base); line-height: var(--c-leading-relaxed); color: var(--c-foreground-secondary);">C社的自媒体矩阵基础设施。解决个体自媒体在内容生产、持续运营和流量获取三大瓶颈上的困难，同时为C社生态提供传播能力。</p>
+                            <div class="mt-6 flex items-center gap-1 text-sm" style="color: #7c3aed;">
+                                <span>了解Agentshow</span>
+                                <i data-icon="arrow-right" class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Ecosystem Note -->
+    <section class="py-16" style="background: var(--c-surface-container-low);">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="max-w-3xl mx-auto text-center">
+                <div class="flex items-center justify-center gap-4 mb-6">
+                    <div class="w-3 h-3 rounded-full" style="background: #2b7de9;"></div>
+                    <div class="w-3 h-3 rounded-full" style="background: #2d8a56;"></div>
+                    <div class="w-3 h-3 rounded-full" style="background: #1a6fb5;"></div>
+                    <div class="w-3 h-3 rounded-full" style="background: #7c3aed;"></div>
+                </div>
+                <h2 class="mb-4" style="font-size: clamp(20px, 2.5vw, 28px); font-weight: 700; color: var(--c-foreground); text-wrap: balance;">相互支撑的生态体系</h2>
+                <p style="font-size: var(--c-text-base); line-height: var(--c-leading-relaxed); color: var(--c-foreground-secondary);">四个项目不是孤立的业务线，而是相互关联的生态节点。SAT为所有项目提供AI能力基础；Onmyown的C-Store为Cloudex和Agentshow提供交易场景；Cloudex和Agentshow反过来为Onmyown的创业者提供流量入口。一个成员可以同时参与多个项目，在交叉参与中获取复合价值。</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="px-6 py-12" style="background: var(--c-foreground);">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start justify-between gap-8">
+        <div class="flex items-center gap-3">
+            <img src="../assets/c-logo-white-bg.png" alt="C社" class="h-[68px] w-auto brightness-0 invert opacity-90">
+            <span class="text-sm font-medium" style="color: rgba(255,255,255,0.7);">一起做，更有利</span>
+        </div>
+        <div class="flex items-center gap-6">
+            <a href="index.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-80" style="color: rgba(255,255,255,0.5);">首页</a>
+            <a href="about.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-80" style="color: rgba(255,255,255,0.5);">关于C社</a>
+            <a href="projects.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-80" style="color: rgba(255,255,255,0.5);">核心项目</a>
+            <a href="benefits.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-80" style="color: rgba(255,255,255,0.5);">成员收益</a>
+            <a href="join.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-80" style="color: rgba(255,255,255,0.5);">加入我们</a>
+        </div>
+        <p class="text-xs" style="color: rgba(255,255,255,0.35);">&copy; 2026 C社. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>lucide.createIcons();</script>
+</body>
+</html>
