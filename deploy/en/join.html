@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Us - C Community</title>
+    <style id="theme-vars">
+:root {
+  --c-primary: #f03c1e;
+  --c-primary-light: #f4633d;
+  --c-primary-dark: #c9301a;
+  --c-gold: #ffd200;
+  --c-gold-light: #ffe14d;
+  --c-gold-dark: #d4ad00;
+  --c-background: #faf8f5;
+  --c-surface: #ffffff;
+  --c-surface-container-low: #f5f3ef;
+  --c-surface-container: #eeebe6;
+  --c-surface-container-high: #e8e5e0;
+  --c-muted: #f0ede8;
+  --c-muted-foreground: #6b6560;
+  --c-foreground: #2d2d2d;
+  --c-foreground-secondary: #555555;
+  --c-foreground-tertiary: #888888;
+  --c-foreground-inverse: #ffffff;
+  --c-border: #e2dfda;
+  --c-border-strong: #c9c5bf;
+  --c-sat-accent: #2b7de9;
+  --c-onmyown-accent: #2d8a56;
+  --c-cloudex-accent: #1a6fb5;
+  --c-agentshow-accent: #7c3aed;
+  --c-shadow-sm: 0 1px 2px rgba(45,45,45,0.06);
+  --c-shadow-md: 0 4px 8px rgba(45,45,45,0.08);
+  --c-shadow-lg: 0 8px 24px rgba(45,45,45,0.10);
+  --c-shadow-xl: 0 16px 48px rgba(45,45,45,0.12);
+  --c-radius-sm: 4px;
+  --c-radius-md: 8px;
+  --c-radius-lg: 12px;
+  --c-radius-xl: 16px;
+  --c-font-sans: "Helvetica Neue",Arial,sans-serif;
+  --c-font-heading: "Helvetica Neue",Arial,sans-serif;
+  --c-text-xs: 0.75rem;
+  --c-text-sm: 0.875rem;
+  --c-text-base: 1rem;
+  --c-text-lg: 1.125rem;
+  --c-text-xl: 1.25rem;
+  --c-text-2xl: 1.5rem;
+  --c-text-3xl: 1.875rem;
+  --c-text-4xl: 2.25rem;
+  --c-text-5xl: 3rem;
+  --c-text-display: clamp(2.25rem,5vw,3.75rem);
+  --c-leading-tight: 1.25;
+  --c-leading-normal: 1.6;
+  --c-leading-relaxed: 1.75;
+}
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.1/dist/index.global.js"></script>
+    <script src="https://unpkg.com/lucide@1.8.0/dist/umd/lucide.min.js"></script>
+    <style type="text/tailwindcss">
+    @theme inline {
+      --color-primary: var(--c-primary);
+      --color-foreground: var(--c-foreground);
+      --color-background: var(--c-background);
+      --color-muted: var(--c-muted);
+      --color-surface: var(--c-surface);
+      --color-border: var(--c-border);
+    }
+  @layer base {
+    body { background: var(--c-background); color: var(--c-foreground); font-family: var(--c-font-sans); }
+    td, th { @apply break-words; word-break: break-all; word-break: auto-phrase; }
+    th { @apply whitespace-nowrap; }
+  }
+    </style>
+    <style>
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      [data-icon] { display: inline-flex; align-items: center; justify-content: center; -webkit-mask-size: contain; mask-size: contain; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-position: center; mask-position: center; background-color: currentColor; }
+    </style>
+</head>
+<body class="min-h-screen font-sans antialiased">
+
+<nav class="w-full border-b" style="border-color: var(--c-border); background: var(--c-surface);">
+    <div class="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
+        <a href="../index.html" class="flex items-center gap-2 shrink-0">
+            <img src="../assets/c-logo-main.png" alt="C Community" class="h-[88px] w-auto">
+        </a>
+        <div class="flex items-center gap-6">
+            <a href="index.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-70" style="color: var(--c-foreground-secondary);">Home</a>
+            <a href="about.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-70" style="color: var(--c-foreground-secondary);">About</a>
+            <a href="projects.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-70" style="color: var(--c-foreground-secondary);">Projects</a>
+            <a href="benefits.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-70" style="color: var(--c-foreground-secondary);">Benefits</a>
+            <a href="join.html" class="inline-flex items-center whitespace-nowrap px-4 py-2 rounded-lg text-sm font-semibold transition-colors duration-200 hover:opacity-90" style="background: var(--c-primary); color: var(--c-foreground-inverse);">Join Us</a>
+            <a href="../join.html" class="text-xs whitespace-nowrap px-3 py-1.5 rounded-lg border transition-colors duration-200 hover:opacity-70" style="border-color: var(--c-border); color: var(--c-foreground-secondary);">中文</a>
+        </div>
+    </div>
+</nav>
+
+<main>
+    <!-- Hero -->
+    <section class="py-20 md:py-28">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="max-w-3xl">
+                <h1 style="font-size: clamp(24px, 3vw, 36px); font-weight: 700; color: var(--c-foreground); text-wrap: balance;">Join C Community</h1>
+                <p class="mt-6" style="font-size: var(--c-text-lg); line-height: var(--c-leading-relaxed); color: var(--c-foreground-secondary);">C Community welcomes everyone who shares the philosophy of "alliance and co-creation." Regardless of your industry or stage, as long as you are curious about the AI era and willing to improve yourself and help others through collaboration, there is a place for you here.</p>
+                <div class="mt-8" style="border-left: 4px solid var(--c-primary); padding-left: 24px; font-size: var(--c-text-xl); color: var(--c-foreground); font-style: italic;">Alliance in co-creation, shared in returns.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who is C Community for -->
+    <section class="pb-20 md:pb-28">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="mb-12" style="font-size: clamp(24px, 3vw, 36px); font-weight: 700; color: var(--c-foreground); text-wrap: balance;">Who is C Community For</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="border rounded-xl p-8" style="border-color: var(--c-border); box-shadow: var(--c-shadow-sm); background: var(--c-surface);">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold" style="background: var(--c-muted); color: var(--c-foreground);">01</div>
+                        <h3 class="text-lg font-semibold" style="color: var(--c-foreground);">People Who Want to Improve Their AI Skills</h3>
+                    </div>
+                    <p style="font-size: var(--c-text-base); line-height: var(--c-leading-relaxed); color: var(--c-foreground-secondary);">You sense that AI is changing your industry, but you are not satisfied with fragmented information. You want to systematically learn AI tools and apply them to your actual work to truly improve efficiency and output.</p>
+                </div>
+                <div class="border rounded-xl p-8" style="border-color: var(--c-border); box-shadow: var(--c-shadow-sm); background: var(--c-surface);">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold" style="background: var(--c-muted); color: var(--c-foreground);">02</div>
+                        <h3 class="text-lg font-semibold" style="color: var(--c-foreground);">People Exploring or Already Running a Solo Business</h3>
+                    </div>
+                    <p style="font-size: var(--c-text-base); line-height: var(--c-leading-relaxed); color: var(--c-foreground-secondary);">You are exploring the possibilities of a one-person company or solo entrepreneurship, but lack a complete support system. You need comprehensive support — AI tools, community resources, and transaction channels — rather than scattered business advice.</p>
+                </div>
+                <div class="border rounded-xl p-8" style="border-color: var(--c-border); box-shadow: var(--c-shadow-sm); background: var(--c-surface);">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold" style="background: var(--c-muted); color: var(--c-foreground);">03</div>
+                        <h3 class="text-lg font-semibold" style="color: var(--c-foreground);">People with Idle Resources to Activate</h3>
+                    </div>
+                    <p style="font-size: var(--c-text-base); line-height: var(--c-leading-relaxed); color: var(--c-foreground-secondary);">You have social media accounts, professional skills, industry experience, or personal networks that have not yet been effectively utilized. You want to find the right platform and collaboration scenarios to turn idle resources into real value.</p>
+                </div>
+                <div class="border rounded-xl p-8" style="border-color: var(--c-border); box-shadow: var(--c-shadow-sm); background: var(--c-surface);">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold" style="background: var(--c-muted); color: var(--c-foreground);">04</div>
+                        <h3 class="text-lg font-semibold" style="color: var(--c-foreground);">People Who Believe in the Power of Alliance</h3>
+                    </div>
+                    <p style="font-size: var(--c-text-base); line-height: var(--c-leading-relaxed); color: var(--c-foreground-secondary);">You believe that individuals need organized strength to face the changes of the times, and you are willing to collaborate and co-build with others under fair rules. You do not seek short-term utilitarian returns, but value long-term value accumulation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 md:py-28" style="background: var(--c-foreground);">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            <h2 class="text-2xl md:text-3xl font-bold mb-6" style="color: var(--c-foreground-inverse);">Are You Ready?</h2>
+            <p class="mb-10" style="font-size: var(--c-text-lg); line-height: var(--c-leading-relaxed); color: rgba(255,255,255,0.7);">C Community is steadily growing. Join us and become a participant in the constructive forces of the AI era. Enhance your capabilities, accumulate resources, and gain returns through real commercial projects — "Together, We Achieve More."</p>
+            <a href="projects.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold transition-colors duration-200 hover:opacity-90" style="background: var(--c-primary); color: var(--c-foreground-inverse);">
+                Browse Core Projects
+                <i data-icon="arrow-right" class="w-4 h-4"></i>
+            </a>
+        </div>
+    </section>
+</main>
+
+<footer class="px-6 py-12" style="background: var(--c-foreground);">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start justify-between gap-8">
+        <div class="flex items-center gap-2">
+            <img src="../assets/c-logo-white-bg.png" alt="C Community" class="h-[68px] w-auto brightness-0 invert opacity-90">
+            <span class="text-sm font-medium" style="color: rgba(255,255,255,0.7);">Together, We Achieve More</span>
+        </div>
+        <div class="flex items-center gap-6">
+            <a href="index.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-80" style="color: rgba(255,255,255,0.5);">Home</a>
+            <a href="about.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-80" style="color: rgba(255,255,255,0.5);">About</a>
+            <a href="projects.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-80" style="color: rgba(255,255,255,0.5);">Projects</a>
+            <a href="benefits.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-80" style="color: rgba(255,255,255,0.5);">Benefits</a>
+            <a href="join.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-80" style="color: rgba(255,255,255,0.5);">Join Us</a>
+        </div>
+        <p class="text-xs" style="color: rgba(255,255,255,0.35);">&copy; 2026 C Community. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>lucide.createIcons();</script>
+</body>
+</html>
