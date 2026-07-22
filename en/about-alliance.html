@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Way of Alliance - C Community</title>
+    <style id="theme-vars">
+:root {
+  --c-primary: #f03c1e;
+  --c-primary-light: #f4633d;
+  --c-primary-dark: #c9301a;
+  --c-gold: #ffd200;
+  --c-gold-light: #ffe14d;
+  --c-gold-dark: #d4ad00;
+  --c-background: #faf8f5;
+  --c-surface: #ffffff;
+  --c-surface-container-low: #f5f3ef;
+  --c-surface-container: #eeebe6;
+  --c-surface-container-high: #e8e5e0;
+  --c-muted: #f0ede8;
+  --c-muted-foreground: #6b6560;
+  --c-foreground: #2d2d2d;
+  --c-foreground-secondary: #555555;
+  --c-foreground-tertiary: #888888;
+  --c-foreground-inverse: #ffffff;
+  --c-border: #e2dfda;
+  --c-border-strong: #c9c5bf;
+  --c-sat-accent: #2b7de9;
+  --c-onmyown-accent: #2d8a56;
+  --c-cloudex-accent: #1a6fb5;
+  --c-agentshow-accent: #7c3aed;
+  --c-shadow-sm: 0 1px 2px rgba(45,45,45,0.06);
+  --c-shadow-md: 0 4px 8px rgba(45,45,45,0.08);
+  --c-shadow-lg: 0 8px 24px rgba(45,45,45,0.10);
+  --c-shadow-xl: 0 16px 48px rgba(45,45,45,0.12);
+  --c-radius-sm: 4px;
+  --c-radius-md: 8px;
+  --c-radius-lg: 12px;
+  --c-radius-xl: 16px;
+  --c-font-sans: "Helvetica Neue",Arial,sans-serif;
+  --c-font-heading: "Helvetica Neue",Arial,sans-serif;
+  --c-text-xs: 0.75rem;
+  --c-text-sm: 0.875rem;
+  --c-text-base: 1rem;
+  --c-text-lg: 1.125rem;
+  --c-text-xl: 1.25rem;
+  --c-text-2xl: 1.5rem;
+  --c-text-3xl: 1.875rem;
+  --c-text-4xl: 2.25rem;
+  --c-text-5xl: 3rem;
+  --c-text-display: clamp(2.25rem,5vw,3.75rem);
+  --c-leading-tight: 1.25;
+  --c-leading-normal: 1.6;
+  --c-leading-relaxed: 1.75;
+}
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.1/dist/index.global.js"></script>
+    <script src="https://unpkg.com/lucide@1.8.0/dist/umd/lucide.min.js"></script>
+    <style type="text/tailwindcss">
+    @theme inline {
+      --color-primary: var(--c-primary);
+      --color-foreground: var(--c-foreground);
+      --color-background: var(--c-background);
+      --color-muted: var(--c-muted);
+      --color-surface: var(--c-surface);
+      --color-border: var(--c-border);
+    }
+  @layer base {
+    body { background: var(--c-background); color: var(--c-foreground); font-family: var(--c-font-sans); }
+    td, th { @apply break-words; word-break: break-all; word-break: auto-phrase; }
+    th { @apply whitespace-nowrap; }
+  }
+    </style>
+    <style>
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      [data-icon] { display: inline-flex; align-items: center; justify-content: center; -webkit-mask-size: contain; mask-size: contain; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-position: center; mask-position: center; background-color: currentColor; }
+    </style>
+</head>
+<body class="min-h-screen font-sans antialiased">
+
+<nav class="w-full border-b" style="border-color: var(--c-border); background: var(--c-surface);">
+    <div class="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
+        <a href="../index.html" class="flex items-center gap-2 shrink-0">
+            <img src="../assets/c-logo-main.png" alt="C Community" class="h-[88px] w-auto">
+        </a>
+        <div class="flex items-center gap-6">
+            <a href="../index.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-70" style="color: var(--c-foreground-secondary);">Home</a>
+            <a href="about.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-70" style="color: var(--c-primary); font-weight: 600;">About</a>
+            <a href="projects.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-70" style="color: var(--c-foreground-secondary);">Projects</a>
+            <a href="benefits.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-70" style="color: var(--c-foreground-secondary);">Benefits</a>
+            <a href="join.html" class="inline-flex items-center whitespace-nowrap px-4 py-2 rounded-lg text-sm font-semibold transition-colors duration-200 hover:opacity-90" style="background: var(--c-primary); color: var(--c-foreground-inverse);">Join Us</a>
+            <a href="../about-alliance.html" class="text-xs whitespace-nowrap px-3 py-1.5 rounded-lg border transition-colors duration-200 hover:opacity-70" style="border-color: var(--c-border); color: var(--c-foreground-secondary);">中文</a>
+        </div>
+    </div>
+</nav>
+
+<main>
+    <!-- Sub-nav -->
+    <div class="border-b" style="border-color: var(--c-border); background: var(--c-surface-container-low);">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex items-center gap-8 overflow-x-auto no-scrollbar py-3">
+                <a href="about-positioning.html" class="text-sm whitespace-nowrap transition-colors duration-200" style="color: var(--c-foreground-secondary);">Our Positioning</a>
+                <a href="about-theory.html" class="text-sm whitespace-nowrap transition-colors duration-200" style="color: var(--c-foreground-secondary);">Value Theory</a>
+                <a href="about-alliance.html" class="text-sm whitespace-nowrap transition-colors duration-200" style="color: var(--c-primary); font-weight: 600;">The Way of Alliance</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Intro -->
+    <section class="py-20 md:py-28">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="max-w-3xl">
+                <h1 style="font-size: clamp(24px, 3vw, 36px); font-weight: 700; color: var(--c-foreground); text-wrap: balance;">The Way of Alliance</h1>
+                <p class="mt-6" style="font-size: var(--c-text-lg); line-height: var(--c-leading-relaxed); color: var(--c-foreground-secondary);">Alliance is not C Community's invention, but a collective action pattern that has recurred throughout human society. From the labor movement to open-source software, every successful alliance in history has followed similar underlying logic. Understanding these precedents helps us see C Community's direction more clearly.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Historical Precedents -->
+    <section class="pb-20">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="mb-12" style="font-size: clamp(24px, 3vw, 36px); font-weight: 700; color: var(--c-foreground); text-wrap: balance;">Historical Precedents of Alliance</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="border rounded-xl p-8" style="border-color: var(--c-border); box-shadow: var(--c-shadow-sm); background: var(--c-surface);">
+                    <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-6" style="background: var(--c-muted);">
+                        <i data-icon="users" class="w-5 h-5" style="color: var(--c-primary);"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-3" style="color: var(--c-foreground);">Labor Movement</h3>
+                    <p style="font-size: var(--c-text-base); line-height: var(--c-leading-relaxed); color: var(--c-foreground-secondary);">During the Industrial Revolution, individual workers had no bargaining power against capital. The labor movement, through collective bargaining, secured reasonable working conditions and compensation for workers. Core insight: scattered individuals, through organized action, can significantly shift the balance of power.</p>
+                </div>
+                <div class="border rounded-xl p-8" style="border-color: var(--c-border); box-shadow: var(--c-shadow-sm); background: var(--c-surface);">
+                    <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-6" style="background: var(--c-muted);">
+                        <i data-icon="wheat" class="w-5 h-5" style="color: var(--c-primary);"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-3" style="color: var(--c-foreground);">Agricultural Cooperatives</h3>
+                    <p style="font-size: var(--c-text-base); line-height: var(--c-leading-relaxed); color: var(--c-foreground-secondary);">Facing competition from large agribusinesses, individual farmers achieved resource integration and economies of scale through the cooperative model. Joint purchasing reduced costs, and joint selling enhanced bargaining power. Core insight: collaboration can produce scale advantages that individuals cannot achieve alone.</p>
+                </div>
+                <div class="border rounded-xl p-8" style="border-color: var(--c-border); box-shadow: var(--c-shadow-sm); background: var(--c-surface);">
+                    <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-6" style="background: var(--c-muted);">
+                        <i data-icon="building-2" class="w-5 h-5" style="color: var(--c-primary);"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-3" style="color: var(--c-foreground);">Modern Corporation</h3>
+                    <p style="font-size: var(--c-text-base); line-height: var(--c-leading-relaxed); color: var(--c-foreground-secondary);">The corporate system is essentially a form of alliance: multiple investors pool resources together, managed by professional teams, with returns distributed according to agreed terms. Core insight: sound rule design and incentive mechanisms are the institutional foundation for sustained alliance operation.</p>
+                </div>
+                <div class="border rounded-xl p-8" style="border-color: var(--c-border); box-shadow: var(--c-shadow-sm); background: var(--c-surface);">
+                    <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-6" style="background: var(--c-muted);">
+                        <i data-icon="code-2" class="w-5 h-5" style="color: var(--c-primary);"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-3" style="color: var(--c-foreground);">Open Source Movement</h3>
+                    <p style="font-size: var(--c-text-base); line-height: var(--c-leading-relaxed); color: var(--c-foreground-secondary);">The open-source movement proved that global decentralized collaboration is feasible. Millions of developers, without central command, jointly built the infrastructure that supports the modern internet. Core insight: sharing and co-creation can produce outcomes that transcend any single organization.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Three Conditions -->
+    <section class="py-20 md:py-28" style="background: var(--c-surface-container-low);">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="max-w-3xl">
+                <h2 class="mb-12" style="font-size: clamp(24px, 3vw, 36px); font-weight: 700; color: var(--c-foreground); text-wrap: balance;">Three Conditions for Effective Alliance</h2>
+
+                <div class="space-y-10">
+                    <div>
+                        <h3 class="mb-3" style="font-size: var(--c-text-xl); font-weight: 600; color: var(--c-foreground);">Common Goal</h3>
+                        <p style="font-size: var(--c-text-base); line-height: var(--c-leading-relaxed); color: var(--c-foreground-secondary);">Alliance participants need a shared goal -- not an abstract idea, but a concrete, tangible need. C Community's common goal is: achieving better development opportunities through collaboration in the AI era. This goal is specific enough and broad enough to attract individuals from diverse backgrounds.</p>
+                    </div>
+                    <div>
+                        <h3 class="mb-3" style="font-size: var(--c-text-xl); font-weight: 600; color: var(--c-foreground);">Fair Incentives</h3>
+                        <p style="font-size: var(--c-text-base); line-height: var(--c-leading-relaxed); color: var(--c-foreground-secondary);">There must be a fair correspondence between contribution and return. If the fruits of alliance are monopolized by a few, most participants will leave. C Community ensures that every member's contribution receives appropriate recognition and reward through clear project participation mechanisms and contribution tracking systems.</p>
+                    </div>
+                    <div>
+                        <h3 class="mb-3" style="font-size: var(--c-text-xl); font-weight: 600; color: var(--c-foreground);">Concrete Endeavors</h3>
+                        <p style="font-size: var(--c-text-base); line-height: var(--c-leading-relaxed); color: var(--c-foreground-secondary);">Alliance needs concrete endeavor carriers, not just staying at the conceptual level. C Community's four core projects serve as such carriers -- members transform alliance from concept to practice by participating in specific work within SAT, Onmyown, Cloudex, or Agentshow. Only alliances supported by concrete endeavors have lasting vitality.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pull Quote -->
+    <section class="py-20 md:py-28">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="mb-8" style="border-left: 4px solid var(--c-primary); padding-left: 24px; font-size: var(--c-text-xl); color: var(--c-foreground); font-style: italic; text-align: left;">Isolated individuals are weak, but individuals organized with the right rules can form a collective force capable of shifting the balance of power.</div>
+            <a href="join.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold transition-colors duration-200 hover:opacity-90" style="background: var(--c-primary); color: var(--c-foreground-inverse);">
+                Join C Community
+                <i data-icon="arrow-right" class="w-4 h-4"></i>
+            </a>
+        </div>
+    </section>
+</main>
+
+<footer class="px-6 py-12" style="background: var(--c-foreground);">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start justify-between gap-8">
+        <div class="flex items-center gap-2">
+            <img src="../assets/c-logo-white-bg.png" alt="C Community" class="h-[68px] w-auto brightness-0 invert opacity-90">
+            <span class="text-sm font-medium" style="color: rgba(255,255,255,0.7);">Together, We Achieve More</span>
+        </div>
+        <div class="flex items-center gap-6">
+            <a href="../index.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-80" style="color: rgba(255,255,255,0.5);">Home</a>
+            <a href="about.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-80" style="color: rgba(255,255,255,0.5);">About</a>
+            <a href="projects.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-80" style="color: rgba(255,255,255,0.5);">Projects</a>
+            <a href="benefits.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-80" style="color: rgba(255,255,255,0.5);">Benefits</a>
+            <a href="join.html" class="text-sm whitespace-nowrap transition-colors duration-200 hover:opacity-80" style="color: rgba(255,255,255,0.5);">Join Us</a>
+        </div>
+        <p class="text-xs" style="color: rgba(255,255,255,0.35);">&copy; 2026 C Community. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>lucide.createIcons();</script>
+</body>
+</html>
